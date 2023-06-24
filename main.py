@@ -1,19 +1,23 @@
-#1. Create a greeting for your program.
+#If the bill was $150.00, split between 5 people, with 12% tip.
 
-print("Welcome to Band's Generator Name")
+#Each person should pay (150.00 / 5) * 1.12 = 33.6
+#Format the result to 2 decimal places = 33.60
 
-#2. Ask the user for the city that they grew up in.
+#Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
 
-city_name = input("What's name of the city you grew up in ? ")
+#Write your code below this line 👇
 
-#3. Ask the user for the name of a pet.
+print("Welcome to the tip calculator")
+bill = input("What was the total bill? ")
+percantage_tip = input("What percentage tip would you like to give? 10, 12, or 15? ")
+people_split_bill = input("How many people to split the bill? ")
 
-pet_name = input("Whats yout pet's name ?  ")
+tip = float(percantage_tip) / 100
+total_tip = float(bill) * tip
+total_bill = float(bill) + total_tip
+person_pay = total_bill / float(people_split_bill)
 
-#4. Combine the name of their city and pet and show them their band name.
+final_person_pay = round(person_pay, 2)
 
-print("Your Band Name Could Be " + city_name + " " + pet_name)
+print(f"Each person should pay? ${final_person_pay}")
 
-#5. Make sure the input cursor shows on a new line:
-
-# Solution: https://replit.com/@appbrewery/band-name-generator-end
