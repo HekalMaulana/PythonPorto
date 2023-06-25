@@ -1,49 +1,40 @@
-#Write your code below this row 👇
-#Password Generator Project
-import random
-letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
-
-print("Welcome to the PyPassword Generator!")
-nr_letters= int(input("How many letters would you like in your password?\n"))
-nr_symbols = int(input(f"How many symbols would you like?\n"))
-nr_numbers = int(input(f"How many numbers would you like?\n"))
-
-#Eazy Level - Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-my_password = ""
-
-# get random letter
-for letter in range(0, nr_letters):
-    my_password += random.choice(letters)
-
-# get random symbos
-for symbol in range(0, nr_symbols):
-    my_password += random.choice(symbols)
-
-# get random number
-for number in range(0, nr_numbers):
-    my_password += random.choice(numbers)
-
-# Print random password without random list
-print(f"Not random password = {my_password}")
+# total_students_height = 0
 
 
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+# 🚨 Don't change the code below 👇
+student_heights = input("Input a list of student heights ").split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+# 🚨 Don't change the code above 👆
 
-# Memasukan random password ke dalam list
-my_password_list = []
-for n in range(0, len(my_password)):
-    my_password_list += my_password[n]
 
-# Mengacak urutan sebuah list
-random.shuffle(my_password_list)
+#Write your code below this row
+# SUM or total number of the list work
+total_height = 0
+for height in student_heights:
+  total_height += height
 
-# Memasukan tiap list ke dalam sebuah string
-my_random_password = ""
-for random_pasword in my_password_list:
-    my_random_password += random_pasword
+print(total_height)
 
-print(f"\nRandom password = {my_random_password}")
+# LEN or length of the list work
+number_of_student = 0
+for student in student_heights:
+  number_of_student += 1
+
+print(number_of_student)
+
+# Average Calculation and round function work
+
+average_students_height = total_height / number_of_student
+
+print(round(average_students_height))
+
+
+#   total_students_height += student_heights[n]
+#   len_student_height = n + 1
+#
+# average_student_height = total_students_height / len_student_height
+#
+# print(round(average_student_height))
+
+
