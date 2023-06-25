@@ -1,48 +1,64 @@
-print('''
-*******************************************************************************
-          |                   |                  |                     |
- _________|________________.=""_;=.______________|_____________________|_______
-|                   |  ,-"_,=""     `"=.|                  |
-|___________________|__"=._o`"-._        `"=.______________|___________________
-          |                `"=._o`"=._      _`"=._                     |
- _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
-|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
-|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
-          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
- _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
-|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
-____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
-/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
-____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
-/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
-____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
-/______/______/______/______/______/______/______/______/______/______/_____ /
-*******************************************************************************
-''')
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
+import random
 
-#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
 
 #Write your code below this line 👇
 
-cross_road = input("You are on cross road. Where do you want to go? type 'left' or 'right' ")
-if cross_road == "left":
-    in_lake = input("You are in a lake. Type 'wait' to wait for a boot or type 'swim' to swim across ")
-    if in_lake == "wait":
-        choose_door = input(
-            "You arrive in island. There is a house with 3 doors. red, yellow, and blue. Which colour do you choose? ")
-        if choose_door == "yellow":
-            print("You win the game")
-        elif choose_door == "red":
-            print("Burned by fire. Game over")
-        elif choose_door == "blue":
-            print("Eaten by beasts. Game over")
-        else:
-            print("Game over")
-    else:
-        print("Attacked by trout. Game over")
+# Variable
+rock_paper_scissors = [rock, paper, scissors]
+random_num = random.randint(0, 2)
+
+# User choose
+user_choose = int(input("What do you choose? '0' for Rock, '1' for Paper, '2' for Scissors "))
+
+# Show user choose
+print("You choose\n")
+print(rock_paper_scissors[user_choose])
+
+# Computer choose
+computer_choose = rock_paper_scissors[random_num]
+
+# Show computer choose
+print("Computer Choose\n")
+print(computer_choose)
+
+# Show the winner
+if user_choose == 2 and random_num == 0:
+    print("You Lose")
+elif user_choose == 0 and random_num == 2:
+    print("You Win")
+elif user_choose >= 3 and user_choose < 0:
+    print("Invalid Number, You Lose")
+elif user_choose > random_num:
+    print("You Win")
+elif user_choose == random_num:
+    print("Draw")
 else:
-    print("Fall into a hole. Game Over")
+    print("Computer Win")
+
 
