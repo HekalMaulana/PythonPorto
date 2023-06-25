@@ -1,23 +1,48 @@
-#If the bill was $150.00, split between 5 people, with 12% tip.
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
 
-#Each person should pay (150.00 / 5) * 1.12 = 33.6
-#Format the result to 2 decimal places = 33.60
-
-#Tip: There are 2 ways to round a number. You might have to do some Googling to solve this.💪
+#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
 
 #Write your code below this line 👇
 
-print("Welcome to the tip calculator")
-bill = input("What was the total bill? ")
-percantage_tip = input("What percentage tip would you like to give? 10, 12, or 15? ")
-people_split_bill = input("How many people to split the bill? ")
-
-tip = float(percantage_tip) / 100
-total_tip = float(bill) * tip
-total_bill = float(bill) + total_tip
-person_pay = total_bill / float(people_split_bill)
-
-final_person_pay = round(person_pay, 2)
-
-print(f"Each person should pay? ${final_person_pay}")
+cross_road = input("You are on cross road. Where do you want to go? type 'left' or 'right' ")
+if cross_road == "left":
+    in_lake = input("You are in a lake. Type 'wait' to wait for a boot or type 'swim' to swim across ")
+    if in_lake == "wait":
+        choose_door = input(
+            "You arrive in island. There is a house with 3 doors. red, yellow, and blue. Which colour do you choose? ")
+        if choose_door == "yellow":
+            print("You win the game")
+        elif choose_door == "red":
+            print("Burned by fire. Game over")
+        elif choose_door == "blue":
+            print("Eaten by beasts. Game over")
+        else:
+            print("Game over")
+    else:
+        print("Attacked by trout. Game over")
+else:
+    print("Fall into a hole. Game Over")
 
