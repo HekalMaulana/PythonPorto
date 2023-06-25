@@ -1,64 +1,23 @@
-import random
+# 🚨 Don't change the code below 👇
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+# 🚨 Don't change the code above 👆
 
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
+#Write your code below this row 👇
+horizontal = int(position[0])
+vertical = int(position[1])
+treasure_put = "X"
 
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
+selected_vertical = map[vertical - 1]
+selected_vertical[horizontal - 1] = treasure_put
 
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
 
-#Write your code below this line 👇
+#Write your code above this row 👆
 
-# Variable
-rock_paper_scissors = [rock, paper, scissors]
-random_num = random.randint(0, 2)
-
-# User choose
-user_choose = int(input("What do you choose? '0' for Rock, '1' for Paper, '2' for Scissors "))
-
-# Show user choose
-print("You choose\n")
-print(rock_paper_scissors[user_choose])
-
-# Computer choose
-computer_choose = rock_paper_scissors[random_num]
-
-# Show computer choose
-print("Computer Choose\n")
-print(computer_choose)
-
-# Show the winner
-if user_choose == 2 and random_num == 0:
-    print("You Lose")
-elif user_choose == 0 and random_num == 2:
-    print("You Win")
-elif user_choose >= 3 and user_choose < 0:
-    print("Invalid Number, You Lose")
-elif user_choose > random_num:
-    print("You Win")
-elif user_choose == random_num:
-    print("Draw")
-else:
-    print("Computer Win")
-
+# 🚨 Don't change the code below 👇
+print(f"{row1}\n{row2}\n{row3}")
 
